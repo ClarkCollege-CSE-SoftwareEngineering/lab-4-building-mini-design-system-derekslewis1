@@ -93,8 +93,9 @@ Take a few minutes to read through the token files and the Icon/Text components 
 
 🤔 **Reflection Question:** Look at `src/tokens/colors.ts`. How does organizing colors by semantic meaning (success, warning, error, info) differ from organizing them by visual property (green, yellow, red, blue)? What advantages does the semantic approach offer?
 
----
 Organizing colors by visual property like red, green and blue describes how the color looks, while organizing them semantically illustrates what the color actually represents in the UI. The semantic approach makes things easier to read and understand as they focus on the meaning over appearance. Using the semantic approach also allows for easy redesign and allows for you to have a consistent design across your entire UI. 
+
+---
 
 ## Part 2: Create the Button Atom (25 minutes)
 
@@ -489,6 +490,8 @@ describe('Alert', () => {
 
 🤔 **Reflection Question:** The Alert molecule imports and uses Icon, Text, and Button atoms. If you needed to update how all buttons look across your entire application, how many files would you need to change? How does this demonstrate Frost's point about the value of atomic design?
 
+If you needed to update how all buttons look across your entire application, you would only need to change the Button atom in one place. Since the Alert and other components reuse that same Button, they automatically reflect the update without extra changes. This shows Frosts point that atomic design promotes reuse by building larger components from smaller pieces.
+
 ---
 
 ## Part 4: Complete Your README (10 minutes)
@@ -511,7 +514,7 @@ Update the `README.md` in your project root to include:
 2. **Reflection Section** (minimum 150 words) answering:
    - How does composing the Alert molecule from Icon, Text, and Button atoms demonstrate the value of atomic design?
    - What role do design tokens play in maintaining consistency across your components?
-   - If you needed to add a "dark mode" to this design system, what would you need to change?
+   - If you needed to add a "dark mode" to this design system, what would you need to change? 
 
 3. **Key Concepts** section listing 3-5 things you learned about atomic design
 
@@ -628,5 +631,27 @@ Run `npm run test:coverage` and open `coverage/index.html` in a browser to see w
 - 🔗 [React Testing Library Documentation](https://testing-library.com/docs/)
 - 🔗 [Vitest Documentation](https://vitest.dev/)
 
-####Reflection Section
 
+## Reflection Section
+
+#### Derek Lewis Feb 2 2026
+
+#### - How does composing the Alert molecule from Icon, Text, and Button atoms demonstrate the value of atomic design?
+
+Composing the Alert from Icon, Text, and Button shows how atomic design builds bigger pieces from small, reusable parts. Each atom has it's own job, and when combined, they create a more complex component without adding extra complexity. This makes the Alert easy to reuse and modify without changing how the smaller pieces work.
+
+#### - What role do design tokens play in maintaining consistency across your components?
+
+Design tokens standardize key styles so every component pulls from the same set of design choices. This prevents inconsistencies that happen when you use your own custom values. It also makes updating the look and feel of the app simple, since changes only need to be made in one place.
+
+#### - If you needed to add a "dark mode" to this design system, what would you need to change? 
+
+To add dark mode to the design, you would really just need to update the color tokens. You would create dark mode versions of all colors in 'colors.ts' and add a theme switching button to toggle between light and dark modes. 
+
+## Key Concepts
+
+1. **Atomic Design**: Components are organized into atoms, molecules, organisms, etc. This structure makes it easy to understand how components relate and build upon one another.
+
+2. **Design Tokens**: Centralizing design values like colors, spacing, or typography ensures consistency across your components and application. 
+
+3. **Component Setup**: You build molecules by combining atoms together and can create more complex components without duplicating code. Changes to a single atom will forward to all components that use it. 
