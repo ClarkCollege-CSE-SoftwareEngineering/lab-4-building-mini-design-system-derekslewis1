@@ -94,6 +94,7 @@ Take a few minutes to read through the token files and the Icon/Text components 
 🤔 **Reflection Question:** Look at `src/tokens/colors.ts`. How does organizing colors by semantic meaning (success, warning, error, info) differ from organizing them by visual property (green, yellow, red, blue)? What advantages does the semantic approach offer?
 
 ---
+Organizing colors by visual property like red, green and blue describes how the color looks, while organizing them semantically illustrates what the color actually represents in the UI. The semantic approach makes things easier to read and understand as they focus on the meaning over appearance. Using the semantic approach also allows for easy redesign and allows for you to have a consistent design across your entire UI. 
 
 ## Part 2: Create the Button Atom (25 minutes)
 
@@ -283,6 +284,8 @@ describe('Button', () => {
 ✅ **Checkpoint:** Run `npm test` — your Button tests should pass.
 
 🤔 **Reflection Question:** Notice how the Button component uses `spacing.xs`, `spacing.sm`, etc. instead of hardcoded values like `'4px'`, `'8px'`. What would you need to change if your design team decided to increase all spacing by 2px?
+
+If the design team decided to increase spacing by 2px, you would only need to change the spacing.ts file inside of /tokens. This is where we handle the spacing and use it globally within the project. 
 
 ---
 
@@ -624,3 +627,6 @@ Run `npm run test:coverage` and open `coverage/index.html` in a browser to see w
 - 🔗 [Atomic Design Chapter 2](https://atomicdesign.bradfrost.com/chapter-2/)
 - 🔗 [React Testing Library Documentation](https://testing-library.com/docs/)
 - 🔗 [Vitest Documentation](https://vitest.dev/)
+
+####Reflection Section
+
